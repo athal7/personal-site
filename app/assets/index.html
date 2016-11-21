@@ -6,9 +6,22 @@
     <meta name="viewport" content="width=device-width, initial-scale=1">
     <meta name="description" content="software engineer, sports lover, Brooklynite">
     <meta name="author" content="Andrew Thal">
-
     <title>Andrew Thal</title>
+
+    <!-- FontAwesome -->
+    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/font-awesome/4.7.0/css/font-awesome.min.css">
+
+    <!-- Slick Carousel -->
+    <link rel="stylesheet" type="text/css" href="//cdn.jsdelivr.net/jquery.slick/1.5.7/slick.css"/>
+    <link rel="stylesheet" type="text/css" href="//cdn.jsdelivr.net/jquery.slick/1.5.7/slick-theme.css"/>
+    <!-- <link rel="stylesheet" href="vendor.css"> -->
     <link rel="stylesheet" href="app.css">
+
+    <script type="text/javascript" src="//code.jquery.com/jquery-1.11.0.min.js"></script>
+    <script type="text/javascript" src="//code.jquery.com/jquery-migrate-1.2.1.min.js"></script>
+    <script type="text/javascript" src="//cdn.jsdelivr.net/jquery.slick/1.5.7/slick.min.js"></script>
+    <script src="vendor.js"></script>
+    <script src="app.js"></script>
   </head>
 
   <body>
@@ -24,112 +37,108 @@
         </div>
       </div>
 
-      <!-- FontAwesome -->
-<link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/font-awesome/4.7.0/css/font-awesome.min.css">
+      <div class="carousel-filters">
+        <i class="filter fa fa-briefcase fa-2x" data-filter="work"></i>
+        <i class="filter fa fa-graduation-cap fa-2x" data-filter="education"></i>
+        <i class="filter fa fa-futbol-o fa-2x" data-filter="play"></i>
+        <i class="filter fa fa-code fa-2x" data-filter="oss"></i>
+      </div>
 
-<!-- Slick Carousel -->
-<link rel="stylesheet" type="text/css" href="//cdn.jsdelivr.net/jquery.slick/1.5.7/slick.css"/>
-<link rel="stylesheet" type="text/css" href="//cdn.jsdelivr.net/jquery.slick/1.5.7/slick-theme.css"/>
-<script type="text/javascript" src="//code.jquery.com/jquery-1.11.0.min.js"></script>
-<script type="text/javascript" src="//code.jquery.com/jquery-migrate-1.2.1.min.js"></script>
-<script type="text/javascript" src="//cdn.jsdelivr.net/jquery.slick/1.5.7/slick.min.js"></script>
+      <div class="my-carousel">
+        <div class="carousel-item work" style="background-image: url(/images/headshot.jpg);" data-description="software engineer, sports lover, Brooklynite"></div>
+        <a target="_blank" href="https://2u.com" class="carousel-item work" style="background-image: url(/images/2U.png);" data-description="architects backend systems and developer tools @ 2U"></a>
+        <a target="_blank" href="https://bonobos.com" class="carousel-item work" style="background-image: url(/images/bonobos.jpg);" data-description="contributed and led on the engineering team @ Bonobos"></a>
+        <a target="_blank" href="http://solidus.io" class="carousel-item oss" style="background-image: url(/images/solidus.jpg);" data-description="maintained Solidus, an open source eCommerce application for high volume retailers"></a>
+        <a target="_blank" href="http://livingsocial.com/escapes" class="carousel-item work" style="background-image: url(/images/ls_escapes.png);" data-description="rebuilt LivingSocial&#39;s travel offerings"></a>
+        <a target="_blank" href="http://metromaster.herokuapp.com" class="carousel-item work" style="background-image: url(/images/metromaster.png);" data-description="helps D.C. Metro riders optimize their trip for comfort and speed"></a>
+        <a target="_blank" href="http://www.gwu.edu" class="carousel-item education" style="background-image: url(/images/gwu.jpg);" data-description="studied psychology and  computer science @ GW"></a>
+        <a target="_blank" href="http://www.hungryacademy.com/" class="carousel-item education" style="background-image: url(/images/beast.png);" data-description="learned software best practices @ hungry academy (2012)"></a>
+        <a target="_blank" href="https://coderwall.com/athal7/protips" class="carousel-item oss" style="background-image: url(/images/coderwall-512.png);" data-description="posts pro-tips on coderwall"></a>
+        <a target="_blank" href="http://athal7.github.io/elixir_learning" class="carousel-item oss" style="background-image: url(images/elixir-flame__1uaywq__.png);" data-description="presents an elixir intro training &amp; demo app"></a>
+        <a target="_blank" href="https://www.railstutorial.org" class="carousel-item oss" style="background-image: url(images/railstutorial.png);" data-description="served as a technical reviewer for the 'Ruby on Rails Tutorial (Rails 5)'"></a>
+        <a target="_blank" href="https://github.com/athal7/thermos/" class="carousel-item oss" style="background-image: url(images/rubygems.png);" data-description="built an always-warm, auto-rebuilding rails caching gem without timers or touching "></a>
+        <a target="_blank" href="#" class="carousel-item play" style="background-image: url(/images/washington_sports.jpg);" data-description="roots for D.C. sports teams (painfully at times)"></a>
+        <a target="_blank" href="https://modules.ussquash.com/ssm/pages/player_profile.asp?id=94893" class="carousel-item play" style="background-image: url(/images/squash.jpg);" data-description="plays squash @ NYSC Cobble Hill"></a>
+        <a target="_blank" href="#" class="carousel-item play" style="background-image: url(/images/softball.jpg);" data-description="plays softball"></a>
+      </div>
 
-<div class="carousel-filters">
-	<i class="filter fa fa-briefcase fa-2x" data-filter="work"></i>
-	<i class="filter fa fa-graduation-cap fa-2x" data-filter="education"></i>
-	<i class="filter fa fa-futbol-o fa-2x" data-filter="play"></i>
-	<i class="filter fa fa-code fa-2x" data-filter="oss"></i>
-</div>
-
-<div class="my-carousel">
-	<div class="carousel-item work" style="background-image: url(/images/headshot.jpg);" data-description="software engineer, sports lover, Brooklynite"></div>
-	<a target="_blank" href="https://2u.com" class="carousel-item work" style="background-image: url(/images/2U.png);" data-description="architects backend systems and developer tools @ 2U"></a>
-	<a target="_blank" href="https://bonobos.com" class="carousel-item work" style="background-image: url(/images/bonobos.jpg);" data-description="contributed and led on the engineering team @ Bonobos"></a>
-	<a target="_blank" href="http://solidus.io" class="carousel-item oss" style="background-image: url(/images/solidus.jpg);" data-description="maintained Solidus, an open source eCommerce application for high volume retailers"></a>
-	<a target="_blank" href="http://livingsocial.com/escapes" class="carousel-item work" style="background-image: url(/images/ls_escapes.png);" data-description="rebuilt LivingSocial&#39;s travel offerings"></a>
-	<a target="_blank" href="http://metromaster.herokuapp.com" class="carousel-item work" style="background-image: url(/images/metromaster.png);" data-description="helps D.C. Metro riders optimize their trip for comfort and speed"></a>
-	<a target="_blank" href="http://www.gwu.edu" class="carousel-item education" style="background-image: url(/images/gwu.jpg);" data-description="studied psychology and  computer science @ GW"></a>
-	<a target="_blank" href="http://www.hungryacademy.com/" class="carousel-item education" style="background-image: url(/images/beast.png);" data-description="learned software best practices @ hungry academy (2012)"></a>
-	<a target="_blank" href="https://coderwall.com/athal7/protips" class="carousel-item oss" style="background-image: url(/images/coderwall-512.png);" data-description="posts pro-tips on coderwall"></a>
-	<a target="_blank" href="http://athal7.github.io/elixir_learning" class="carousel-item oss" style="background-image: url(images/elixir-flame__1uaywq__.png);" data-description="presents an elixir intro training &amp; demo app"></a>
-	<a target="_blank" href="https://www.railstutorial.org" class="carousel-item oss" style="background-image: url(images/railstutorial.png);" data-description="served as a technical reviewer for the 'Ruby on Rails Tutorial (Rails 5)'"></a>
-	<a target="_blank" href="https://github.com/athal7/thermos/" class="carousel-item oss" style="background-image: url(images/rubygems.png);" data-description="built an always-warm, auto-rebuilding rails caching gem without timers or touching "></a>
-	<a target="_blank" href="#" class="carousel-item play" style="background-image: url(/images/washington_sports.jpg);" data-description="roots for D.C. sports teams (painfully at times)"></a>
-	<a target="_blank" href="https://modules.ussquash.com/ssm/pages/player_profile.asp?id=94893" class="carousel-item play" style="background-image: url(/images/squash.jpg);" data-description="plays squash @ NYSC Cobble Hill"></a>
-	<a target="_blank" href="#" class="carousel-item play" style="background-image: url(/images/softball.jpg);" data-description="plays softball"></a>
-</div>
-
-<div class="contact">
-	<a target="_blank" href="mailto:hello@athal7.com">
-		<i class="fa fa-envelope fa-2x"></i>
-	</a>
-	<a target="_blank" href="http://doodle.com/athal7">
-		<i class="fa fa-calendar-o fa-2x"></i>
-	</a>
-	<a target="_blank" href="http://linkedin.com/in/athal7">
-		<i class="fa fa-linkedin-square fa-2x"></i>
-	</a>
-	<a target="_blank" href="http://github.com/athal7">
-		<i class="fa fa-github fa-2x"></i>
-	</a>
-	<a target="_blank" href="http://facebook.com/athal7">
-		<i class="fa fa-facebook-official fa-2x"></i>
-	</a>
-	<a target="_blank" href="http://twitter.com/athal7">
-		<i class="fa fa-twitter fa-2x"></i>
-	</a>
-	<a target="_blank" href="https://app.plum.io/profile/41c42c0657cd6d5371003cf3148ab5972ebf1062">
-		<i class="fa fa-sliders fa-2x"></i>
-	</a>
-	<a target="_blank" href="/images/resume.pdf">
-		<i class="fa fa-id-card-o fa-2x"></i>
-	</a>
-</div>
-
-<script type="text/javascript">
-$(document).ready(function(){
-  $('.my-carousel').slick({
-    dots: true,
-    arrows: false,
-    infinite: true,
-    autoplay: true,
-    autoplaySpeed: 4000,
-    slidesToShow: 1,
-    pauseOnHover: true,
-    pauseOnDotsHover: true
-  });
-});
-
-var updateCarouselDescription = function(carousel) {
-  $(".jumbotron .lead").text(carousel.find(".slick-current").attr("data-description"));
-}
-
-$('.my-carousel').on('afterChange', function(event, slick, currentSlide){
-  updateCarouselDescription($(this));
-});
-
-$('.my-carousel').on('init', function(event, slick) {
-  updateCarouselDescription($(this));
-});
-$('.my-carousel').on('reInit', function(event, slick) {
-  updateCarouselDescription($(this));
-});
-
-$(".carousel-filters .filter").on("click", function() {
-  if ($(this).hasClass("filtering")) {
-    $(this).removeClass('filtering');
-    $(".my-carousel").slick("slickUnfilter");
-  } else {
-    $(this).siblings().removeClass('filtering');
-    $(this).addClass('filtering');
-    var filterAttr = $(this).attr("data-filter")
-    $(".my-carousel").slick("slickFilter", "." + filterAttr);
-  }
-});
-</script>
-
+      <div class="contact">
+        <a target="_blank" href="mailto:hello@athal7.com">
+          <i class="fa fa-envelope fa-2x"></i>
+        </a>
+        <a target="_blank" href="http://doodle.com/athal7">
+          <i class="fa fa-calendar-o fa-2x"></i>
+        </a>
+        <a target="_blank" href="http://linkedin.com/in/athal7">
+          <i class="fa fa-linkedin-square fa-2x"></i>
+        </a>
+        <a target="_blank" href="http://github.com/athal7">
+          <i class="fa fa-github fa-2x"></i>
+        </a>
+        <a target="_blank" href="http://facebook.com/athal7">
+          <i class="fa fa-facebook-official fa-2x"></i>
+        </a>
+        <a target="_blank" href="http://twitter.com/athal7">
+          <i class="fa fa-twitter fa-2x"></i>
+        </a>
+        <a target="_blank" href="https://app.plum.io/profile/41c42c0657cd6d5371003cf3148ab5972ebf1062">
+          <i class="fa fa-sliders fa-2x"></i>
+        </a>
+        <a target="_blank" href="/images/resume.pdf">
+          <i class="fa fa-id-card-o fa-2x"></i>
+        </a>
+      </div>
     </div> <!-- /container -->
-    <script src="app.js"></script>
+    <script type="text/javascript">
+      $(document).ready(function(){
+        $('.my-carousel').slick({
+          dots: true,
+          arrows: false,
+          infinite: true,
+          autoplay: true,
+          autoplaySpeed: 4000,
+          slidesToShow: 1,
+          pauseOnHover: true,
+          pauseOnDotsHover: true
+        });
+      });
+
+      var updateCarouselDescription = function(carousel) {
+        $(".jumbotron .lead").text(carousel.find(".slick-current").attr("data-description"));
+      }
+
+      $('.my-carousel').on('afterChange', function(event, slick, currentSlide){
+        updateCarouselDescription($(this));
+      });
+
+      $('.my-carousel').on('init', function(event, slick) {
+        updateCarouselDescription($(this));
+      });
+      $('.my-carousel').on('reInit', function(event, slick) {
+        updateCarouselDescription($(this));
+      });
+
+      $(".carousel-filters .filter").on("click", function() {
+        if ($(this).hasClass("filtering")) {
+          $(this).removeClass('filtering');
+          $(".my-carousel").slick("slickUnfilter");
+        } else {
+          $(this).siblings().removeClass('filtering');
+          $(this).addClass('filtering');
+          var filterAttr = $(this).attr("data-filter")
+          $(".my-carousel").slick("slickFilter", "." + filterAttr);
+        }
+      });
+    </script>
+    <script type="text/javascript">
+      (function(i,s,o,g,r,a,m){i['GoogleAnalyticsObject']=r;i[r]=i[r]||function(){
+        (i[r].q=i[r].q||[]).push(arguments)},i[r].l=1*new Date();a=s.createElement(o),
+          m=s.getElementsByTagName(o)[0];a.async=1;a.src=g;m.parentNode.insertBefore(a,m)
+      })(window,document,'script','https://www.google-analytics.com/analytics.js','ga');
+
+      ga('create', 'UA-57664021-2', 'auto');
+      ga('send', 'pageview');
+    </script>
   </body>
 </html>
 
