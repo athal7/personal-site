@@ -6,7 +6,7 @@ export default class Header extends Component {
       <div className='header'>
         <div className='jumbotron'>
           <h2>{this.props.name}</h2>
-          <p className='lead'></p>
+          <p className='lead'>{this.props.lead}</p>
         </div>
       </div>
     )

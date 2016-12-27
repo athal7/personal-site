@@ -66,12 +66,14 @@ body {
 .my-carousel {
   margin-top: 10px;
 }
+
 .my-carousel .carousel-item {
-  height: 230px;
+  display: block;
   text-align: center;
+  height: 230px;
+  background-size: contain;
   background-repeat: no-repeat;
   background-position: center;
-  background-size: contain;
 }
 
 .contact {
