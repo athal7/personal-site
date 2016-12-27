@@ -7,7 +7,7 @@ export default class Filters extends Component {
       <div className='carousel-filters'>
         {
           this.props.filters.map((filter, i) =>
-            <Filter key={i} icon={filter.icon} category={filter.category} />
+            <Filter key={i} icon={filter.icon} category={filter.category} onClick={this.props.onClick} current={filter.category == this.props.currentFilter} />
           )
         }
       </div>

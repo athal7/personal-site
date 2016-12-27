@@ -35,7 +35,7 @@ let Carousel = React.createClass({
 })
 
 Carousel.propTypes = {
-  carouselItems: React.PropTypes.array.isRequired
+  carouselItems: React.PropTypes.array.isRequired,
 }
 
 export default Carousel
