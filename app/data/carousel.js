@@ -47,7 +47,7 @@ export const CAROUSEL_ITEMS = [
     backgroundImage: 'rubygems.png',
     description: 'built an always-warm, auto-rebuilding rails caching gem without timers or touching'},
   {category: 'play',
-    backgroundImage: 'washington_sports.png',
+    backgroundImage: 'washington_sports.jpg',
     description: 'roots for D.C. sports teams (painfully at times)'},
   {category: 'play',
     linkTo: 'https://modules.ussquash.com/ssm/pages/player_profile.asp?id=94893' ,
