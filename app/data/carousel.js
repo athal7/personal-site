@@ -17,7 +17,7 @@ export const CAROUSEL_ITEMS = [
   {category: 'work',
     linkTo: 'http://livingsocial.com/escapes',
     backgroundImage: 'ls_escapes.png',
-    description: 'rebuilt LivingSocial&#39;s travel offerings'},
+    description: "rebuilt LivingSocial's travel offerings"},
   {category: 'work',
     linkTo: 'http://metromaster.herokuapp.com',
     backgroundImage: 'metromaster.png',
