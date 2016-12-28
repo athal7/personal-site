@@ -18,10 +18,21 @@ export default class App extends Component {
   render() {
     return (
       <div>
-        <Header name="Andrew Thal" lead={this.state.lead}/>
-        <Filters filters={FILTERS} onClick={this.handleFilterClick.bind(this)} currentFilter={this.state.filter} />
-        <Carousel carouselItems={this.state.carouselItems} afterChange={this.carouselChange.bind(this)} />
-        <Contacts contacts={CONTACTS} />
+        <Header
+          name="Andrew Thal"
+          lead={this.state.lead} />
+
+        <Filters
+          filters={FILTERS}
+          onClick={this.handleFilterClick.bind(this)}
+          currentFilter={this.state.filter} />
+
+        <Carousel
+          carouselItems={this.state.carouselItems}
+          afterChange={this.carouselChange.bind(this)} />
+
+        <Contacts
+          contacts={CONTACTS} />
       </div>
     )
   }
