@@ -1,6 +1,7 @@
 import React from 'react'
 import Slider from 'react-slick'
-import CarouselItem from '../components/CarouselItem'
+import CarouselItem from './CarouselItem'
+import s from './style.css'
 
 let Carousel = React.createClass({
   render: function() {
@@ -16,7 +17,7 @@ let Carousel = React.createClass({
       afterChange: this.props.afterChange
     }
     return (
-      <div className="my-carousel">
+      <div className={s.carousel}>
         <Slider {...settings}>
           {
             this.props.carouselItems.map((element, i) =>

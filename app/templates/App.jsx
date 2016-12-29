@@ -1,9 +1,10 @@
 import React, {Component} from 'react'
-import Header from '../components/Header'
-import Filters from '../components/Filters'
-import Carousel from '../components/Carousel'
-import Contacts from '../components/Contacts'
+import Header from '../components/header/Header'
+import Filters from '../components/filters/Filters'
+import Carousel from '../components/carousel/Carousel'
+import Contacts from '../components/contacts/Contacts'
 import {CAROUSEL_ITEMS, FILTERS, CONTACTS} from '../data/carousel'
+import s from './style.css'
 
 export default class App extends Component {
   constructor(props) {
@@ -17,7 +18,7 @@ export default class App extends Component {
 
   render() {
     return (
-      <div>
+      <div className={s.app}>
         <Header
           name="Andrew Thal"
           lead={this.state.lead} />

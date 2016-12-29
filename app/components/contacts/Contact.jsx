@@ -1,8 +1,9 @@
 import React, {Component} from 'react'
+import s from './style.css'
 
 export default class Contact extends Component {
   className() {
-    return `fa fa-${this.props.icon} fa-2x`
+    return `${s.contact} fa fa-${this.props.icon} fa-2x`
   }
 
   render() {

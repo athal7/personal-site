@@ -1,0 +1,9 @@
+.contacts {
+  padding-top: 10px;
+  text-align: right;
+}
+.contact {
+  margin-left: 10px;
+  color: #777;
+  text-decoration: none;
+}

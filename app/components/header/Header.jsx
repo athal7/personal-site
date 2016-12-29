@@ -1,12 +1,13 @@
 import React, {Component} from 'react'
+import s from './style.css'
 
 export default class Header extends Component {
   render() {
     return(
-      <div className='header'>
-        <div className='jumbotron'>
+      <div className={s.header}>
+        <div className={s.jumbotron}>
           <h2>{this.props.name}</h2>
-          <p className='lead'>{this.props.lead}</p>
+          <p className={s.lead}>{this.props.lead}</p>
         </div>
       </div>
     )

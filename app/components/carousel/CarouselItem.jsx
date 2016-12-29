@@ -1,8 +1,9 @@
 import React, {Component} from 'react'
+import s from './style.css'
 
 export default class CarouselItem extends Component {
   className() {
-    return `carousel-item ${this.props.category}`
+    return `${s.item} ${this.props.category}`
   }
 
   style() {
