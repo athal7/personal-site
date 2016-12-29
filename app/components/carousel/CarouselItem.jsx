@@ -3,7 +3,7 @@ import s from './style.css'
 
 export default class CarouselItem extends Component {
   className() {
-    return `${s.item} ${this.props.category}`
+    return `carousel-item ${s.item} ${this.props.category}`
   }
 
   style() {
