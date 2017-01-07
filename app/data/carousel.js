@@ -70,6 +70,7 @@ export const CONTACTS = [
   {linkTo: 'http://doodle.com/athal7', icon: 'calendar-o'},
   {linkTo: 'http://linkedin.com/in/athal7', icon: 'linkedin-square'},
   {linkTo: 'http://github.com/athal7', icon: 'github'},
+  {linkTo: 'http://medium.com/@athal7', icon: 'medium'},
   {linkTo: 'http://facebook.com/athal7', icon: 'facebook-official'},
   {linkTo: 'http://twitter.com/athal7', icon: 'twitter'},
   {linkTo: 'https://app.plum.io/profile/41c42c0657cd6d5371003cf3148ab5972ebf1062', icon: 'sliders'},
