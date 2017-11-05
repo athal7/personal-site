@@ -74,5 +74,5 @@ export const CONTACTS = [
   {linkTo: 'http://facebook.com/athal7', icon: 'facebook-official'},
   {linkTo: 'http://twitter.com/athal7', icon: 'twitter'},
   {linkTo: 'https://app.plum.io/profile/41c42c0657cd6d5371003cf3148ab5972ebf1062', icon: 'sliders'},
-  {linkTo: '/images/resume.pdf', icon: 'id-card-o'},
+  {linkTo: 'https://resume.creddle.io/resume/7aztw0bpq31', icon: 'id-card-o'},
 ]
