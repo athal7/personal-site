@@ -67,7 +67,7 @@ export const FILTERS = [
 
 export const CONTACTS = [
   {linkTo: 'mailto:athal7@me.com', icon: 'envelope'},
-  {linkTo: 'http://doodle.com/athal7', icon: 'calendar-o'},
+  {linkTo: 'http://calendly.com/athal7', icon: 'calendar-o'},
   {linkTo: 'http://linkedin.com/in/athal7', icon: 'linkedin-square'},
   {linkTo: 'http://github.com/athal7', icon: 'github'},
   {linkTo: 'https://app.plum.io/profile/41c42c0657cd6d5371003cf3148ab5972ebf1062', icon: 'sliders'},
