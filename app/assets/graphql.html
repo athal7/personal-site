@@ -1,0 +1,353 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <title>GraphQL</title>
+    <meta charset="utf-8">
+    <style>
+      @import url(https://fonts.googleapis.com/css?family=Bitter);
+      @import url(https://fonts.googleapis.com/css?family=Consolas);
+
+      body { font-family: 'Bitter'; }
+      .remark-slide-content {background-color: #f7f7f7;}
+      h1, h2, h3 {
+        /* font-family: 'Yanone Kaffeesatz'; */
+        color: #00557C;
+        font-weight: normal;
+      }
+      h4 {
+        margin-top: 30px;
+        margin-bottom: 10px;
+        font-weight: normal
+      }
+      h5, h6 {
+        margin-top: 0px;
+        margin-bottom: 0px;
+        font-weight: normal
+      }
+      a, a:hover, a:visited { color: #007CA6; text-decoration: none;  }
+      ol,ul { line-height: 36px; }
+      .remark-code { font-size: 13px; }
+      .remark-code-line-highlighted { background-color: rgba(255,255,0,0.3) }
+      img {
+        max-width: 50%;
+        max-height: 50%;
+        display: block;
+        margin: 0 auto;
+      }
+      blockquote {
+        display: block;
+        background-color: #f0f0f0;
+        padding: 10px 20px;
+        margin: 0px;
+      }
+      table {
+        border-collapse: collapse;
+      }
+      table, th, td {
+        border: 1px solid black;
+      }
+      th {
+        text-align: center;
+      }
+      th, td {
+        padding: 15px 20px;
+        width: 25%;
+        vertical-align: top;
+      }
+      .column {width: 50%;}
+      .column-left {float: left;}
+      .column-right {float: right;}
+    </style>
+  </head>
+  <body>
+    <textarea id="source">
+
+class: center, middle
+# GraphQL
+### Webservices Guild—May 3, 2018
+
+Andrew Thal, Core Systems
+
+---
+## What we'll cover
+- What is GraphQL
+- Comparison with REST
+- Query Structure
+- Passport Usage—why and how
+- Learnings
+- Group Discussion
+---
+class: center, middle
+## What is GraphQL
+---
+### What is GraphQL
+
+####An API design/definition/schema format
+######Similar to (JSON API, RAML, GraphQL, Swagger, and even SOAP)
+
+####"A query language for your API"
+######[graphql.org](https://graphql.org)
+---
+class: center, middle
+## Comparison with REST
+---
+### Comparison with REST (and SOAP)
+
+| Comparison | REST | GraphQL | JSON API |
+|-|------|---------|-----|
+| Endpoint | per resource | just one | per resource |
+| HTTP Verbs | GET, POST, PUT, DELETE | POST | GET, POST, PUT, DELETE |
+| Resource(s) returned | Single per request | Join as many as desired | Depends on implementation |
+| Response structure/fields | Same for all clients | Client chooses based on request | Client chooses based on request\* |
+
+***
+######\* Depending on implementation restrictions
+###### NOTE: SOAP more like GraphQL in terms of tradeoffs
+---
+class: center, middle
+## Query Structure
+
+*Using Passport as examples*
+---
+### Query Structure
+**Queries**
+
+.column.column-left[
+```graphql
+{
+  fieldMappings {
+    organizationCode
+    fieldName
+    apiFieldName
+    typeName
+  }
+}
+```
+]
+
+.column.column-right[
+```json
+{
+  "data": {
+    "fieldMappings": [
+      {
+        "organizationCode": "unc-mpa",
+        "fieldName": "work_experience",
+        "apiFieldName": "work_experience__c",
+        "typeName": "lead"
+      }
+      ...
+    ]
+  }
+}
+```
+]
+---
+### Query Structure
+**Relationships**
+
+.column.column-left[
+```graphql
+{
+  fieldMappings {
+*   organization { code }
+  }
+}
+```
+]
+
+.column.column-right[
+```json
+{
+  "data": {
+    "fieldMappings": [
+      {
+*       "organization": {
+*         "code": "unc-mpa"
+*       }
+      }
+      ...
+    ]
+  }
+}
+```
+]
+---
+### Query Structure
+**Arguments**
+
+.column.column-left[
+```graphql
+*query myFieldMappingQuery($org: String!) {
+* fieldMappings(
+*   filter: {organizationCode: $org}
+* ) {
+    organizationCode
+    fieldName
+    apiFieldName
+    typeName
+  }
+}
+```
+###### variables:
+```json
+{"org": "unc-mpa"}
+```
+]
+
+.column.column-right[
+```json
+{
+  "data": {
+    "fieldMappings": [
+      {
+        "organizationCode": "unc-mpa",
+        "fieldName": "work_experience",
+        "apiFieldName": "work_experience__c",
+        "typeName": "lead"
+      }
+      ...
+    ]
+  }
+}
+```
+]
+---
+### Query Structure
+**Errors**
+---
+### Query Structure
+**Mutations**
+---
+### Query Structure
+**Subscriptions**
+---
+### Query Structure
+**Advanced Features**
+---
+class: center, middle
+## Passport Usage
+---
+### Passport Usage
+
+**What?**
+- Single service to query data from all Salesforces
+- Field names are 'standard'
+- Maintain field mappings
+
+---
+### Passport Usage
+
+**Why GraphQL?**
+- Sparse fieldsets (many possible fields)
+- Clients often desire related resources
+- Clients have vastly different needs—hard to define payloads that work for everyone
+
+---
+### Passport Usage
+
+**How?**
+- Elixir (performance, esp for subscriptions)
+	- Phoenix
+  - Absinthe
+	- Ecto (maybe Dataloader soon)
+	- Apollo
+
+---
+class: center, middle
+## Learnings (so far)
+---
+### Learnings
+
+**Performance Monitoring**
+
+- NewRelic requires custom instrumentation when using a single endpoint
+- Apollo Engine gives field-level performance and alerting
+
+TODO insert image
+[Apollo Engine](https://engine.apollographql.com/service/gh2uinc-passport?metric=requestRate&range=lastDay&tab=performance)
+
+---
+### Learnings
+
+**Caching (field mappings)**
+- Everything is a POST -> no cache control headers
+- Apollo Engine cache hints
+
+```
+object :field_mapping do
+  meta(:cache, max_age: 3600, scope: :private)
+  ...
+end
+```
+---
+### Learnings
+
+**Clients**
+
+- Library for specific queries counteracts flexibility
+  - examples vs clients
+- Apollo clients (for client side)
+- Backend language client support lacking
+
+---
+### Learnings
+
+**API Documentation**
+- Automatic interactive documentation—GraphiQL
+
+TODO graphiql image
+
+- Postman support is just ok :-/, full support expected [soon](https://github.com/postmanlabs/postman-app-support/issues/1669#issuecomment-348693047)
+- Insomnia
+---
+
+### Learnings
+
+**API Versioning**
+- Single api endpoint—not versioned
+- Can deprecate at a granular query and field level, use apollo to determine no more legacy use
+
+```
+object :accounts do
+  deprecate("This query is no longer being used, please use salesforceObjects")
+
+  field(:uid, deprecate: "This field is deprecated, please use `sfId`)
+  ...
+end
+```
+
+TODO graphiql image
+
+---
+### Learnings
+
+**Libraries**
+
+- Great support for servers and for clients in client-side languages
+- Weaker support for clients in server-side languages (but it's just a POST request with JSON response)
+
+Examples:
+  - Absinthe (Elixir)
+  - Graphene (Python)
+  - GraphQL.js (node)
+  - Apollo Server (node)
+  - GraphQL (ruby)
+  - and more...
+
+---
+class: center, middle
+## Group Discussion
+
+    </textarea>
+    <script src="https://remarkjs.com/downloads/remark-latest.min.js">
+    </script>
+    <script>
+var slideshow = remark.create({
+  navigation: { scroll: false, click: false },
+  highlightLines: true,
+  highlightStyle: 'github'
+});
+    </script>
+  </body>
+</html>
