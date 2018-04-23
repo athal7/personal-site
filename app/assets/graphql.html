@@ -477,15 +477,17 @@ class: center, middle
 **Caching**
 - No cache control headers
 - Apollo Engine cache hints
-]
 
-.column.column-right[
 ```elixir
 object :field_mapping do
   meta(:cache, max_age: 3600, scope: :private)
   ...
 end
 ```
+]
+
+.column.column-right[
+![Apollo Cache](images/cache.png)
 ]
 ---
 ### Learnings
