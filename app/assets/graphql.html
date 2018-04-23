@@ -29,8 +29,8 @@
       .remark-code { font-size: 13px; }
       .remark-code-line-highlighted { background-color: rgba(255,255,0,0.3) }
       img {
-        max-width: 50%;
-        max-height: 50%;
+        max-width: 100%;
+        max-height: 100%;
         display: block;
         margin: 0 auto;
       }
@@ -55,6 +55,8 @@
         vertical-align: top;
       }
       .column {width: 50%;}
+      .column-40 {width: 40%;}
+      .column-60 {width: 60%;}
       .column-left {float: left;}
       .column-right {float: right;}
     </style>
@@ -72,8 +74,8 @@ Andrew Thal, Core Systems
 ## What we'll cover
 - What is GraphQL
 - Comparison with REST
-- Query Structure
 - Passport Usage—why and how
+- Query Structure
 - Learnings
 - Group Discussion
 ---
@@ -99,10 +101,40 @@ class: center, middle
 | HTTP Verbs | GET, POST, PUT, DELETE | POST | GET, POST, PUT, DELETE |
 | Resource(s) returned | Single per request | Join as many as desired | Depends on implementation |
 | Response structure/fields | Same for all clients | Client chooses based on request | Client chooses based on request\* |
+| Field Types | No contract | Typed schema | No contract |
 
 ***
 ######\* Depending on implementation restrictions
 ###### NOTE: SOAP more like GraphQL in terms of tradeoffs
+---
+class: center, middle
+## Passport Usage
+---
+### Passport Usage
+
+**What?**
+- Single service to query data from all Salesforces
+- Field names are 'standard'
+- Maintain field mappings
+
+---
+### Passport Usage
+
+**Why GraphQL?**
+- Sparse fieldsets (many possible fields)
+- Clients often desire related resources
+- Clients have vastly different needs—hard to define payloads that work for everyone
+
+---
+### Passport Usage
+
+**How?**
+- Elixir (performance, esp for subscriptions)
+	- Phoenix
+  - Absinthe
+	- Ecto (maybe Dataloader soon)
+	- Apollo
+
 ---
 class: center, middle
 ## Query Structure
@@ -215,88 +247,269 @@ class: center, middle
 ---
 ### Query Structure
 **Errors**
+
+.column.column-left[
+```graphql
+{
+  fieldMappings {
+*   organizationCodes
+  }
+}
+```
+]
+
+.column.column-right[
+```json
+{
+  "errors": [
+   {
+      "message": "Cannot query field \"organizationCodes\" on type \"FieldMapping\". Did you mean \"organization\" or \"organizationCode\"?",
+      "locations": [
+        {
+          "line": 5,
+          "column": 0
+        }
+      ]
+    },
+  ]
+}
+```
+###### *NOTE: Still a 200 response code*
+]
+---
+### Query Structure
+**Advanced Features - Aliases**
+.column.column-left[
+```
+{
+* mappings: fieldMappings {
+    organizationCode
+  }
+}
+```
+]
+
+.column.column-right[
+```json
+{
+  "data": {
+*   "mappings": [
+      {
+        "organizationCode": "unc-mpa"
+      }
+      ...
+    ]
+  }
+}
+```
+]
+---
+### Query Structure
+**Advanced Features - Unions / Interfaces**
+.column.column-left[
+```
+{
+  salesforceObjects {
+    records {
+      __typename
+*     ...on Account { lastName }
+*     ...on Lead { firstName }
+    }
+  }
+}
+```]
+
+.column.column-right[
+```json
+{
+  "data": {
+    "salesforceObjects": [
+      {
+        "__typename": "Account",
+*       "lastName": "Doe"
+      },
+      {
+        "__typename": "Lead",
+*       "firstName": "John"
+      },
+      ...
+    ]
+  }
+}
+```
+]
+---
+### Query Structure
+**Advanced Features - Fragments**
+
+.column.column-left[
+```
+{
+  salesforceObjects {
+    records {
+*     ...accountFragment
+*     ...placementFragment
+    }
+  }
+}
+*fragment accountFragment on Account {
+  lastName
+  placements { ...placementFragment }
+}
+*fragment placementFragment on Placement {
+  name
+}
+```]
+
+.column.column-right[
+```json
+{
+  "data": {
+    "salesforceObjects": [
+      {
+        "lastName": "Doe",
+        "placements": [
+          {
+            "name": "General Hospital"
+          }
+        ]
+      },
+      {
+       "name": "Grey Sloan Memorial"
+      },
+      ...
+    ]
+  }
+}
+```
+]
 ---
 ### Query Structure
 **Mutations**
+.column.column-left[
+```
+*mutation {
+  createFieldMapping(input: {
+    organizationCode: "gs-umt",
+    fieldName: "work_experience",
+    apiFieldName: "work_experience__c",
+    typeName: "lead"
+  }) {
+    apiFieldName
+    typeName
+  }
+}
+```
+]
+.column.column-right[
+```json
+{
+  "data": {
+    "createFieldMapping": {
+      "apiFieldName": "work_experience__c",
+      "typeName": "lead"
+    }
+  }
+}
+```
+###### *Errors handled the same as with queries*
+]
 ---
 ### Query Structure
 **Subscriptions**
----
-### Query Structure
-**Advanced Features**
----
-class: center, middle
-## Passport Usage
----
-### Passport Usage
+.column.column-left[
+```
+*subscription {
+  salesforceObjectUpdated {
+    record {
+      ...on Account {
+        uid
+      }
+    }
+    changes {
+      ...on Account {
+        lastModifiedDate
+      }
+    }
+  }
+}
+```
+]
 
-**What?**
-- Single service to query data from all Salesforces
-- Field names are 'standard'
-- Maintain field mappings
-
----
-### Passport Usage
-
-**Why GraphQL?**
-- Sparse fieldsets (many possible fields)
-- Clients often desire related resources
-- Clients have vastly different needs—hard to define payloads that work for everyone
-
----
-### Passport Usage
-
-**How?**
-- Elixir (performance, esp for subscriptions)
-	- Phoenix
-  - Absinthe
-	- Ecto (maybe Dataloader soon)
-	- Apollo
-
+.column.column-right[
+```json
+{
+  "data": {
+    "salesforceObjectUpdated": {
+      "record": {
+        "uid": "0010h00001YETLxAAP"
+      },
+      "changes": {
+        "lastModifiedDate": "2018-04-23 19:23:24",
+      }
+    }
+  }
+}
+```
+###### *over websockets*
+]
 ---
 class: center, middle
 ## Learnings (so far)
 ---
 ### Learnings
 
+.column-40.column-left[
 **Performance Monitoring**
 
-- NewRelic requires custom instrumentation when using a single endpoint
+- NewRelic requires custom instrumentation
 - Apollo Engine gives field-level performance and alerting
+]
 
-TODO insert image
-[Apollo Engine](https://engine.apollographql.com/service/gh2uinc-passport?metric=requestRate&range=lastDay&tab=performance)
+.column-60.column-right[
+![Apollo Engine](images/apollo-field-performance.png)
+]
 
 ---
 ### Learnings
 
-**Caching (field mappings)**
-- Everything is a POST -> no cache control headers
+.column.column-left[
+**Caching**
+- No cache control headers
 - Apollo Engine cache hints
+]
 
-```
+.column.column-right[
+```elixir
 object :field_mapping do
   meta(:cache, max_age: 3600, scope: :private)
   ...
 end
 ```
+]
 ---
 ### Learnings
 
-**Clients**
-
-- Library for specific queries counteracts flexibility
-  - examples vs clients
-- Apollo clients (for client side)
-- Backend language client support lacking
-
----
-### Learnings
-
+.column.column-left[
 **API Documentation**
-- Automatic interactive documentation—GraphiQL
+- Automatic interactive documentation
 
-TODO graphiql image
+```elixir
+@desc("A salesforce api field -> standard")
+object :field_mapping do
+  desc("A salesforce api field -> standard")
+  ...
+end
+```
+]
+
+.column.column-right[
+![Graphiql](images/graphiql.png)
+]
+---
+### Learnings
+
+**API Documentation cont.**
 
 - Postman support is just ok :-/, full support expected [soon](https://github.com/postmanlabs/postman-app-support/issues/1669#issuecomment-348693047)
 - Insomnia
@@ -304,21 +517,24 @@ TODO graphiql image
 
 ### Learnings
 
+.column.column-left[
 **API Versioning**
 - Single api endpoint—not versioned
 - Can deprecate at a granular query and field level, use apollo to determine no more legacy use
 
-```
+```elixir
 object :accounts do
-  deprecate("This query is no longer being used, please use salesforceObjects")
+  deprecate("No longer supported")
 
-  field(:uid, deprecate: "This field is deprecated, please use `sfId`)
+  field(:uid, deprecate: "please use `sfId`)
   ...
 end
 ```
+]
 
-TODO graphiql image
-
+.column.column-right[
+![Deprecated](images/deprecated.png)
+]
 ---
 ### Learnings
 
@@ -328,6 +544,7 @@ TODO graphiql image
 - Weaker support for clients in server-side languages (but it's just a POST request with JSON response)
 
 Examples:
+  - Apollo clients (JS, iOS, Android)
   - Absinthe (Elixir)
   - Graphene (Python)
   - GraphQL.js (node)
