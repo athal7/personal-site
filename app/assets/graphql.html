@@ -89,6 +89,19 @@ class: center, middle
 
 ####"A query language for your API"
 ######[graphql.org](https://graphql.org)
+
+```graphql
+{
+  fieldMappings(filters: [{field:"organizationCode", value:"unc-mpa"}]) {
+    organization {
+      code
+      createdBy {
+        username
+      }
+    }
+  }
+}
+```
 ---
 class: center, middle
 ## Comparison with REST
@@ -182,7 +195,12 @@ class: center, middle
 ```graphql
 {
   fieldMappings {
-*   organization { code }
+*   organization {
+      code
+*     createdBy {
+        username
+      }
+    }
   }
 }
 ```
@@ -195,7 +213,10 @@ class: center, middle
     "fieldMappings": [
       {
 *       "organization": {
-*         "code": "unc-mpa"
+*         "code": "unc-mpa",
+*         "createdBy": {
+*           "username": "athal"
+*         }
 *       }
       }
       ...
@@ -280,7 +301,7 @@ class: center, middle
 ### Query Structure
 **Advanced Features - Aliases**
 .column.column-left[
-```
+```graphql
 {
 * mappings: fieldMappings {
     organizationCode
@@ -307,7 +328,7 @@ class: center, middle
 ### Query Structure
 **Advanced Features - Unions / Interfaces**
 .column.column-left[
-```
+```graphql
 {
   salesforceObjects {
     records {
@@ -343,7 +364,7 @@ class: center, middle
 **Advanced Features - Fragments**
 
 .column.column-left[
-```
+```graphql
 {
   salesforceObjects {
     records {
@@ -387,7 +408,7 @@ class: center, middle
 ### Query Structure
 **Mutations**
 .column.column-left[
-```
+```graphql
 *mutation {
   createFieldMapping(input: {
     organizationCode: "gs-umt",
@@ -418,7 +439,7 @@ class: center, middle
 ### Query Structure
 **Subscriptions**
 .column.column-left[
-```
+```graphql
 *subscription {
   salesforceObjectUpdated {
     record {
@@ -507,6 +528,7 @@ end
 
 .column.column-right[
 ![Graphiql](images/graphiql.png)
+###### [GraphiQL](https://passport.api.2u.com/graphiql)
 ]
 ---
 ### Learnings
