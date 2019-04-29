@@ -1,6 +1,6 @@
 export const CAROUSEL_ITEMS = [
   {category: 'work',
-    backgroundImage: 'headshot.jpg',
+    backgroundImage: 'headshot.png',
     description: 'software engineer, sports lover, Michigander'},
   {category: 'work',
     linkTo: 'https://2u.com',
