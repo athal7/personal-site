@@ -5,7 +5,7 @@ export const CAROUSEL_ITEMS = [
   {category: 'work',
     linkTo: 'https://2u.com',
     backgroundImage: '2U.png',
-    description: 'guides architectural direction of learning systems'},
+    description: 'guides architectural direction'},
   {category: 'work',
     linkTo: 'https://bonobos.com',
     backgroundImage: 'bonobos.jpg',
