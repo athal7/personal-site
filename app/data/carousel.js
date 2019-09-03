@@ -52,9 +52,7 @@ export const FILTERS = [
 
 export const CONTACTS = [
   {linkTo: 'https://resume.creddle.io/resume/7aztw0bpq31', icon: 'id-card-o'},
-  {linkTo: 'mailto:athal7@me.com', icon: 'envelope'},
-  {linkTo: 'http://calendly.com/athal7', icon: 'calendar-o'},
+  {linkTo: 'mailto:andrewthal88@gmail.com', icon: 'envelope'},
   {linkTo: 'http://linkedin.com/in/athal7', icon: 'linkedin-square'},
-  {linkTo: 'http://github.com/athal7', icon: 'github'},
-  {linkTo: 'https://app.plum.io/profile/41c42c0657cd6d5371003cf3148ab5972ebf1062', icon: 'sliders'},
+  {linkTo: 'http://github.com/athal7', icon: 'github'}
 ]
