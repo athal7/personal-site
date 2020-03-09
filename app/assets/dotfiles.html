@@ -3,36 +3,6 @@
   <head>
     <title>Automating Development Environment Setup</title>
     <meta charset="utf-8">
-    <style>
-      @import url(https://fonts.googleapis.com/css?family=Bitter);
-      @import url(https://fonts.googleapis.com/css?family=Consolas);
-
-      body { font-family: 'Bitter'; }
-      h1, h2, h3 {
-        /* font-family: 'Yanone Kaffeesatz'; */
-        color: #007CA6;
-        font-weight: normal;
-      }
-      a, a:hover, a:visited { color: #007CA6; }
-      ol,ul { line-height: 36px; }
-      .remark-code, .remark-inline-code { font-family: 'Consolas'; }
-      .remark-inline-code { background-color: #f0f0f0; }
-      .remark-code { font-size: 14px; }
-      img {
-        max-width: 50%;
-        max-height: 50%;
-        display: block;
-        margin: 0 auto;
-      }
-      blockquote {
-        display: block;
-        background-color: #f0f0f0;
-        padding: 10px 20px;
-        margin: 0px;
-        font-size: 24px;
-        font-family: 'Comic Sans MS';
-      }
-    </style>
   </head>
   <body>
     <textarea id="source">
@@ -90,10 +60,8 @@ Or create your own...
 
 
     </textarea>
-    <script src="https://remarkjs.com/downloads/remark-latest.min.js">
-    </script>
-    <script>
-var slideshow = remark.create({ navigation: { scroll: false, click: false }});
-    </script>
+    <link rel="stylesheet" type="text/css" href="./remark.css"></link>
+    <script src="https://remarkjs.com/downloads/remark-latest.min.js"></script>
+    <script src="./remark.js"></script>
   </body>
 </html>

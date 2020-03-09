@@ -1,0 +1,56 @@
+@import url(https://fonts.googleapis.com/css?family=Bitter);
+
+body { font-family: 'Bitter'; }
+.remark-slide-content {background-color: #f7f7f7;}
+h1, h2, h3 {
+  /* font-family: 'Yanone Kaffeesatz'; */
+  color: #00557C;
+  font-weight: normal;
+}
+h4 {
+  margin-top: 30px;
+  margin-bottom: 10px;
+  font-weight: normal
+}
+h5, h6 {
+  margin-top: 0px;
+  margin-bottom: 0px;
+  font-weight: normal
+}
+a, a:hover, a:visited { color: #007CA6; text-decoration: none;  }
+ol,ul { line-height: 36px; }
+.remark-code { font-size: 13px; width: 100%;}
+.remark-code-line {overflow-wrap: break-word;}
+.remark-code-line-highlighted { background-color: rgba(255,255,0,0.3) }
+img {
+  max-width: 100%;
+  max-height: 100%;
+  display: block;
+  margin: 0 auto;
+}
+blockquote {
+  display: block;
+  background-color: #f0f0f0;
+  padding: 10px 20px;
+  margin: 0px;
+}
+table {
+  border-collapse: collapse;
+}
+table, th, td {
+  border: 1px solid black;
+}
+th {
+  text-align: center;
+}
+th, td {
+  padding: 15px 20px;
+  width: 25%;
+  vertical-align: top;
+}
+.column {width: 50%;}
+.column-40 {width: 40%;}
+.column-60 {width: 60%;}
+.column-left {float: left;}
+.column-right {float: right;}
+.clear{clear:both}

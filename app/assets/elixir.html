@@ -3,19 +3,6 @@
   <head>
     <title>Introduction to Elixir</title>
     <meta charset="utf-8">
-    <style>
-      @import url(https://fonts.googleapis.com/css?family=Bitter);
-
-      body { font-family: 'Bitter'; }
-      .remark-slide-content {background-color: #f7f7f7;}
-      h1, h2, h3 {
-        /* font-family: 'Yanone Kaffeesatz'; */
-        color: #4E2A8E;
-        font-weight: normal;
-      }
-      a, a:hover, a:visited { color: #4E2A8E; }
-      ol,ul { line-height: 36px; }
-    </style>
   </head>
   <body>
     <textarea id="source">
@@ -510,14 +497,14 @@ class: middle
 #### Thank you for your time! Questions?
 
     </textarea>
-    <script src="https://remarkjs.com/downloads/remark-latest.min.js">
-    </script>
-    <script>
-    var slideshow = remark.create({
-      navigation: { scroll: false, click: false },
-      highlightLines: true,
-      highlightStyle: 'github'
-    });
-    </script>
+    <link rel="stylesheet" type="text/css" href="./remark.css"></link>
+    <script src="https://remarkjs.com/downloads/remark-latest.min.js"></script>
+    <script src="./remark.js"></script>
+
+    <style>
+      h1, h2, h3, a {
+        color: #4E2A8E;
+      }
+    </style>
   </body>
 </html>
