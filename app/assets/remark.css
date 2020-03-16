@@ -1,5 +1,4 @@
 body { font-family: "Gill Sans";}
-.remark-slide-content {background-color: #f7f7f7;}
 h1, h2, h3 {
   color: #00557C;
 }
@@ -11,22 +10,25 @@ h5, h6 {
   margin-top: 0px;
   margin-bottom: 0px;
 }
-a, a:hover, a:visited { color: #007CA6; text-decoration: none;  }
-ol,ul { line-height: 36px; }
-.remark-code { font-size: 13px; width: 100%;}
-.remark-code-line {overflow-wrap: break-word;}
-.remark-code-line-highlighted { background-color: rgba(255,255,0,0.3) }
-img {
-  max-width: 100%;
-  max-height: 20%;
-  display: block;
-  margin: 0 auto;
+a, a:hover, a:visited { 
+  color: #007CA6; text-decoration: none;  
 }
+ol,ul { line-height: 36px; }
 blockquote {
-  display: block;
-  background-color: #f0f0f0;
-  padding: 10px 20px;
-  margin: 0px;
+  border-left: 10px solid transparent;
+  margin: 1.5em 10px;
+  padding: 0.5em 10px;
+  quotes: "\201C""\201D""\2018""\2019";
+}
+blockquote:before {
+  content: open-quote;
+  font-size: 4em;
+  line-height: 0.1em;
+  margin-right: 0.25em;
+  vertical-align: -0.4em;
+}
+blockquote p {
+  display: inline;
 }
 table {
   border-collapse: collapse;
@@ -41,6 +43,22 @@ th, td {
   padding: 15px 20px;
   width: 25%;
   vertical-align: top;
+}
+img {
+  max-width: 100%;
+}
+.remark-slide-content {
+  background-color: #f7f7f7;
+}
+.shadow h1, .shadow h2, .shadow h3 {
+}
+.remark-code { font-size: 13px; width: 100%;}
+.remark-code-line {overflow-wrap: break-word;}
+.remark-code-line-highlighted { background-color: rgba(255,255,0,0.3) }
+.footnote {
+  position: absolute;
+  left: 10px;
+  bottom: 10px;
 }
 .column {width: 50%;}
 .column-40 {width: 40%;}
