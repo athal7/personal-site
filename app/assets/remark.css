@@ -1,21 +1,15 @@
-@import url(https://fonts.googleapis.com/css?family=Bitter);
-
-body { font-family: 'Bitter'; }
+body { font-family: "Gill Sans";}
 .remark-slide-content {background-color: #f7f7f7;}
 h1, h2, h3 {
-  /* font-family: 'Yanone Kaffeesatz'; */
   color: #00557C;
-  font-weight: normal;
 }
 h4 {
   margin-top: 30px;
   margin-bottom: 10px;
-  font-weight: normal
 }
 h5, h6 {
   margin-top: 0px;
   margin-bottom: 0px;
-  font-weight: normal
 }
 a, a:hover, a:visited { color: #007CA6; text-decoration: none;  }
 ol,ul { line-height: 36px; }
@@ -24,7 +18,7 @@ ol,ul { line-height: 36px; }
 .remark-code-line-highlighted { background-color: rgba(255,255,0,0.3) }
 img {
   max-width: 100%;
-  max-height: 100%;
+  max-height: 20%;
   display: block;
   margin: 0 auto;
 }
@@ -54,3 +48,17 @@ th, td {
 .column-left {float: left;}
 .column-right {float: right;}
 .clear{clear:both}
+@page {
+  size: 1024px 768px;
+  margin: 0;
+}
+
+@media print {
+  .remark-slide-scaler {
+    width: 100% !important;
+    height: 100% !important;
+    transform: scale(1) !important;
+    top: 0 !important;
+    left: 0 !important;
+  }
+}
