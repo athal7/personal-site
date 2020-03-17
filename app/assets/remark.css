@@ -47,6 +47,15 @@ th, td {
 img {
   max-width: 100%;
 }
+#progress {
+  width: 100px;
+  background-color: rgba(0,0,0,0.4);
+}
+#progress-bar {
+  width: 0%;
+  height: 2px;
+  background-color: rgba(0,0,0,1);
+}
 .remark-slide-content {
   background-color: #f7f7f7;
 }
