@@ -1,5 +1,5 @@
 body { font-family: "Gill Sans";}
-h1, h2, h3 {
+h1, h2 {
   color: #00557C;
 }
 h4 {
@@ -50,8 +50,6 @@ img {
 .remark-slide-content {
   background-color: #f7f7f7;
 }
-.shadow h1, .shadow h2, .shadow h3 {
-}
 .remark-code { font-size: 13px; width: 100%;}
 .remark-code-line {overflow-wrap: break-word;}
 .remark-code-line-highlighted { background-color: rgba(255,255,0,0.3) }
@@ -59,6 +57,7 @@ img {
   position: absolute;
   left: 10px;
   bottom: 10px;
+  opacity: 0.5;
 }
 .column {width: 50%;}
 .column-40 {width: 40%;}
