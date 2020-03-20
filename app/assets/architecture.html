@@ -1,0 +1,118 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <title>Re-Introduction to Architecture</title>
+    <meta charset="utf-8">
+  </head>
+  <body>
+    <textarea id="source">
+      class: center, middle
+      # Re-Introduction to Architecture
+      .footnote[Andrew Thal]
+      ---
+      class: center, middle
+      <iframe src="https://www.youtube.com/embed/senKnRj3wvk" allow="accelerometer; autoplay; encrypted-media; gyroscope; picture-in-picture"></iframe>
+      ---
+      class: center, middle
+      # Story Time
+      ---
+      background-image: url("https://i2.wp.com/s3.amazonaws.com/production-wordpress-assets/blog/wp-content/uploads/2015/03/2.gif")
+      ---
+      background-image: url("https://www.ben-morris.com/wp-content/library/refactoring-vs-rewriting.gif")
+      ---
+      background-image: url("https://www.mememaker.net/api/bucket?path=static/img/memes/full/2018/Feb/13/13/what-does-this-program-do-13.png")
+      ---
+      background-image: url("https://upload.wikimedia.org/wikipedia/commons/thumb/5/50/Pieter_Bruegel_the_Elder_-_The_Tower_of_Babel_%28Vienna%29_-_Google_Art_Project.jpg/1200px-Pieter_Bruegel_the_Elder_-_The_Tower_of_Babel_%28Vienna%29_-_Google_Art_Project.jpg")
+      ---
+      layout: false
+      class: center, middle
+      # What is Architecture?
+      ---
+      ## What is Architecture?
+      .footnote[Source: [Wikipedia](https://en.wikipedia.org/wiki/Software_architecture)]
+
+      --
+      - Macroscopic system structure
+
+      ???
+      This refers to architecture as a higher-level abstraction of a software system that consists of a collection of computational components together with connectors that describe the interaction between these components.
+      --
+      - The important stuff—whatever that is 
+
+      ???
+      This refers to the fact that software architects should concern themselves with those decisions that have high impact on the system and its stakeholders.
+      --
+      - That which is fundamental to understanding a system in its environment
+
+      --
+      - The things that are hard to change
+
+      ???
+      Since designing the architecture takes place at the beginning of a software system's lifecycle, the architect should focus on decisions that "have to" be right the first time. Following this line of thought, architectural design issues may become non-architectural once their irreversibility can be overcome.
+      .footnote[Source: [Wikipedia](https://en.wikipedia.org/wiki/Software_architecture)]
+      --
+      - A set of architectural design decisions
+
+      ???
+      Software Architecture should not be considered merely a set of models or structures, but should include the decisions that lead to these particular structures, and the rationale behind them. This insight has led to substantial research into software architecture knowledge management.
+      --
+      - Part of a "chain of intentionality"
+      
+      ???
+      There is no sharp distinction between software architecture versus design and requirements engineering. They are all part of a "chain of intentionality" from high-level intentions to low-level details.
+      ---
+      ## Types of Architecture
+      |Type|Strategic thinking|System interactions|Communication|Design|
+      |--------------|------------------|-------------------|-------------|------|
+      |enterprise|across projects|highly abstracted|across organization|minimal, high level|
+      |solutions (systems)|focused on solution|very detailed|multiple teams|detailed|
+      |application (system)|component re-use, maintainability|centered on single application|single project|very detailed|
+
+      .footnote[Source [Wikipedia](https://en.wikipedia.org/wiki/Software_architect)]
+      ---
+      exclude: true
+      class: center, middle
+      layout: false
+      # What is the role of an Architect?
+      ---
+      exclude: true
+      layout: true
+      ## What is the role of an Architect?
+
+      ---
+      exclude: true
+      ### Glue between stakeholders
+      - **Horizontal** Bridge communication between business and developers or different development teams.
+      - **Vertical** Bridge communication between developers and managers.
+      - **Technology** Integrate different technologies or applications with each other.
+      .footnote[Source [@justinamiller](https://github.com/justinamiller/SoftwareArchitect)]
+      ---
+      layout: false
+      class: center, middle
+      # Practice
+      ---
+      layout: true
+      ## Practice
+
+      ---
+      ### Domain Driven Design (DDD)
+      ---
+      ### Technology Radar
+      ---
+      ### Architecture Tradeoff Analysis Method (ATAM)
+      ---
+      ### Architecture Decision Record (ADR)
+      ---
+      ### Architecture Evolution Tracking
+      ---
+      ### Working Groups
+      ---
+      ### Documentation
+      ---
+      ### Education
+    </textarea>
+    <link rel="stylesheet" type="text/css" href="./remark.css"></link>
+    <script src="https://remarkjs.com/downloads/remark-latest.min.js"></script>
+    <script src="./remark.js"></script>
+  </body>
+</html>
