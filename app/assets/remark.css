@@ -73,9 +73,9 @@ iframe {
   bottom: 10px;
   opacity: 0.5;
 }
-.column {width: 50%;}
-.column-40 {width: 40%;}
-.column-60 {width: 60%;}
+.column {width: 45%; margin: 2.5%;}
+.column-40 {width: 35%; margin: 2.5%;}
+.column-60 {width: 55%; margin: 2.5%;}
 .column-left {float: left;}
 .column-right {float: right;}
 .clear{clear:both}

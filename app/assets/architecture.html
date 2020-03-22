@@ -20,19 +20,20 @@
       ---
       background-image: url("https://www.ben-morris.com/wp-content/library/refactoring-vs-rewriting.gif")
       ---
-      background-image: url("https://www.mememaker.net/api/bucket?path=static/img/memes/full/2018/Feb/13/13/what-does-this-program-do-13.png")
-      ---
       background-image: url("https://upload.wikimedia.org/wikipedia/commons/thumb/5/50/Pieter_Bruegel_the_Elder_-_The_Tower_of_Babel_%28Vienna%29_-_Google_Art_Project.jpg/1200px-Pieter_Bruegel_the_Elder_-_The_Tower_of_Babel_%28Vienna%29_-_Google_Art_Project.jpg")
+      ---
+      background-image: url("https://www.mememaker.net/api/bucket?path=static/img/memes/full/2018/Feb/13/13/what-does-this-program-do-13.png")
       ---
       layout: false
       class: center, middle
       # What is Architecture?
       ---
+      layout: true
       ## What is Architecture?
-      .footnote[Source: [Wikipedia](https://en.wikipedia.org/wiki/Software_architecture)]
 
-      --
+      ---
       - Macroscopic system structure
+      .footnote[Source [Wikipedia](https://en.wikipedia.org/wiki/Software_architecture)]
 
       ???
       This refers to architecture as a higher-level abstraction of a software system that consists of a collection of computational components together with connectors that describe the interaction between these components.
@@ -61,7 +62,7 @@
       ???
       There is no sharp distinction between software architecture versus design and requirements engineering. They are all part of a "chain of intentionality" from high-level intentions to low-level details.
       ---
-      ## Types of Architecture
+
       |Type|Strategic thinking|System interactions|Communication|Design|
       |--------------|------------------|-------------------|-------------|------|
       |enterprise|across projects|highly abstracted|across organization|minimal, high level|
@@ -70,46 +71,95 @@
 
       .footnote[Source [Wikipedia](https://en.wikipedia.org/wiki/Software_architect)]
       ---
-      exclude: true
-      class: center, middle
-      layout: false
-      # What is the role of an Architect?
-      ---
-      exclude: true
-      layout: true
-      ## What is the role of an Architect?
+      #### Glue between stakeholders
 
-      ---
-      exclude: true
-      ### Glue between stakeholders
-      - **Horizontal** Bridge communication between business and developers or different development teams.
-      - **Vertical** Bridge communication between developers and managers.
-      - **Technology** Integrate different technologies or applications with each other.
       .footnote[Source [@justinamiller](https://github.com/justinamiller/SoftwareArchitect)]
+
+      --
+      - **Horizontal** Bridge communication between business and developers or different development teams.
+
+      --
+      - **Vertical** Bridge communication between developers and managers.
+
+      --
+      - **Technology** Integrate different technologies or applications with each other.
       ---
       layout: false
       class: center, middle
-      # Practice
+      # Methodologies
       ---
       layout: true
-      ## Practice
+      ## Methodologies
 
       ---
-      ### Domain Driven Design (DDD)
+      .column.column-left[![](https://i2.wp.com/s3.amazonaws.com/production-wordpress-assets/blog/wp-content/uploads/2015/03/2.gif)]
+      .column.column-right[]
+
+      --
+      #### [Domain Driven Design (DDD)](https://blog.jonathanoliver.com/ddd-strategic-design-core-supporting-and-generic-subdomains/)
+
+      --
+      #### [Architecture Tradeoff Analysis Method (ATAM)](https://docs.google.com/spreadsheets/d/1BuoU2GMqFRvAlgO15mqFzSr_WFn3dBuSUPgWTRaxG5A/edit)
       ---
-      ### Technology Radar
+      .column.column-left[![](https://www.ben-morris.com/wp-content/library/refactoring-vs-rewriting.gif)]
+      .column.column-right.pad-left[]
+
+      --
+      #### [Learning](https://github.com/2uinc/architecture/wiki/Learning)
+
+      --
+      #### [Architecture Evolution Tracking](https://docs.google.com/spreadsheets/d/1EVMb25ComvsfXEmRw2orGL3Xb3ELRmXaqPk2HgxHDDQ/edit?ts=5c6d75d5#gid=1854385095)
       ---
-      ### Architecture Tradeoff Analysis Method (ATAM)
+      .column.column-left[![](https://upload.wikimedia.org/wikipedia/commons/thumb/5/50/Pieter_Bruegel_the_Elder_-_The_Tower_of_Babel_%28Vienna%29_-_Google_Art_Project.jpg/1200px-Pieter_Bruegel_the_Elder_-_The_Tower_of_Babel_%28Vienna%29_-_Google_Art_Project.jpg)]
+      .column.column-right.pad-left[]
+
+      --
+      #### [Technology Radar](https://radar.test.2u.com/current)
+      
+      --
+      #### [Working Groups](https://github.com/2uinc/architecture/wiki/Working-Groups)
       ---
-      ### Architecture Decision Record (ADR)
+      .column.column-left[![](https://www.mememaker.net/api/bucket?path=static/img/memes/full/2018/Feb/13/13/what-does-this-program-do-13.png)]
+      .column.column-right.pad-left[]
+      --
+
+      #### [Architecture Decision Record (ADR)](https://github.com/2uinc/architecture/wiki/Decisions)
       ---
-      ### Architecture Evolution Tracking
+      layout: false
+      class: center, middle
+      ## Did you notice anything missing?
       ---
-      ### Working Groups
+      ### Approval chains
+
+      --
+      ### "Ideal State" reference architectures
       ---
-      ### Documentation
+      layout: false
+      class: center, middle
+      # Why?
       ---
-      ### Education
+      class: center, middle
+      # Evolvability & Reactivity
+      ---
+      ## Irreversible Decisions = Cost
+      .column.column-left[![](https://www.ben-morris.com/wp-content/library/refactoring-vs-rewriting.gif)]
+      .column.column-right[![](https://upload.wikimedia.org/wikipedia/commons/thumb/5/50/Pieter_Bruegel_the_Elder_-_The_Tower_of_Babel_%28Vienna%29_-_Google_Art_Project.jpg/1200px-Pieter_Bruegel_the_Elder_-_The_Tower_of_Babel_%28Vienna%29_-_Google_Art_Project.jpg)]
+      ---
+      ## Inappropriate Overhead = Cost
+      .column.column-left[![](https://i2.wp.com/s3.amazonaws.com/production-wordpress-assets/blog/wp-content/uploads/2015/03/2.gif)]
+      .column.column-right[![](https://www.mememaker.net/api/bucket?path=static/img/memes/full/2018/Feb/13/13/what-does-this-program-do-13.png)]
+      ---
+      layout: false
+      class: center, middle
+      # But mistakes matter too
+      ---
+      layout: false
+      class: center, middle
+      # It's in your hands
+      ---
+      layout: false
+      class: center, middle
+      # Thank you!
     </textarea>
     <link rel="stylesheet" type="text/css" href="./remark.css"></link>
     <script src="https://remarkjs.com/downloads/remark-latest.min.js"></script>
