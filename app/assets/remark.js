@@ -1,5 +1,5 @@
 remark.create({
-  navigation: { scroll: false, click: true },
+  navigation: { scroll: false, click: false },
   highlightLines: true,
   highlightStyle: 'github',
   slideNumberFormat: function (current, total) {
