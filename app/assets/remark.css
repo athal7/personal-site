@@ -77,6 +77,7 @@ iframe {
 }
 .column {width: 45%; margin: 2.5%;}
 .column-40 {width: 35%; margin: 2.5%;}
+.column-50 {width: 45%; margin: 2.5%;}
 .column-60 {width: 55%; margin: 2.5%;}
 .column-left {float: left;}
 .column-right {float: right;}
