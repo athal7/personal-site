@@ -1,0 +1,19 @@
+name: Percy
+on: [push, pull_request]
+jobs:
+  build:
+    runs-on: ubuntu-latest
+    steps:
+      - name: Checkout
+        uses: actions/checkout@master
+      - uses: actions/setup-node@v2.0.0
+      - name: build
+        run: |
+          npm i
+          npm run prod
+      - name: Percy Test
+        uses: percy/snapshot-action@v0.1.0
+        with:
+          build-directory: "public/"
+        env:
+          PERCY_TOKEN: ${{ secrets.PERCY_TOKEN }}
