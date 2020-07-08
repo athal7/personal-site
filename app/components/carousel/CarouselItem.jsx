@@ -1,4 +1,5 @@
 import React, {Component} from 'react'
+import PropTypes from 'prop-types'
 import s from './style.css'
 
 export default class CarouselItem extends Component {
@@ -36,8 +37,8 @@ export default class CarouselItem extends Component {
 }
 
 CarouselItem.propTypes = {
-  linkTo: React.PropTypes.string,
-  category: React.PropTypes.string.isRequired,
-  description: React.PropTypes.string.isRequired,
-  backgroundImage: React.PropTypes.string.isRequired
+  linkTo: PropTypes.string,
+  category: PropTypes.string.isRequired,
+  description: PropTypes.string.isRequired,
+  backgroundImage: PropTypes.string.isRequired
 }

@@ -1,10 +1,11 @@
 import React from 'react'
 import Slider from 'react-slick'
 import CarouselItem from './CarouselItem'
+import PropTypes from 'prop-types'
 import s from './style.css'
 
-let Carousel = React.createClass({
-  render: function() {
+class Carousel extends React.Component {
+  render() {
     let settings = {
       dots: true,
       arrows: false,
@@ -34,10 +35,10 @@ let Carousel = React.createClass({
       </div>
     )
   }
-})
+}
 
 Carousel.propTypes = {
-  carouselItems: React.PropTypes.array.isRequired,
+  carouselItems: PropTypes.array.isRequired,
 }
 
 export default Carousel

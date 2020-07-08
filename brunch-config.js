@@ -10,7 +10,21 @@ module.exports = {
   },
 
   plugins: {
-    babel: { presets: ["es2015", "react"] },
-    postcss: { modules: true }
+    babel: { 
+      presets: [
+        ['@babel/env', {
+          targets: {
+            browsers: ['last 2 versions', 'safari >= 7']
+          }
+        }],
+        '@babel/react',
+      ],
+    },
+    postcss: { 
+      modules: true,
+      processors: [
+        require('autoprefixer')(['last 8 versions']),
+      ],
+    }
   }
 };
