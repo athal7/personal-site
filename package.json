@@ -14,7 +14,7 @@
   "dependencies": {
     "hpm": "0.0.0",
     "react": "^15.4.1",
-    "react-dom": "^15.4.1",
+    "react-dom": "^16.13.1",
     "react-slick": "^0.14.5"
   },
   "devDependencies": {
