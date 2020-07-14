@@ -22,7 +22,7 @@
     "@babel/preset-env": "^7.10.4",
     "@babel/preset-react": "^7.10.4",
     "auto-reload-brunch": "^2.0.0",
-    "autoprefixer": "^9.8.4",
+    "autoprefixer": "^9.8.5",
     "babel-brunch": "^7.0.1",
     "brunch": "^3.0.0",
     "clean-css-brunch": "^3.0.0",
