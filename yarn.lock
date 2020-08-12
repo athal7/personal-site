@@ -3064,10 +3064,10 @@ react-is@^16.8.1:
   version "16.13.1"
   resolved "https://registry.yarnpkg.com/react-is/-/react-is-16.13.1.tgz#789729a4dc36de2999dc156dd6c1d9c18cea56a4"
 
-react-slick@^0.27.5:
-  version "0.27.5"
-  resolved "https://registry.yarnpkg.com/react-slick/-/react-slick-0.27.5.tgz#847251851be4d34015d1c1ce9838eac2496f3e31"
-  integrity sha512-5JWCFSE2fL2tjWLar2hOe+I1JHQ9ECva5Y1YR4bn4rgBDSIPxMHgUS/NSkHX2Miic6KfElUxVYfRCaHrwOeVmg==
+react-slick@^0.27.6:
+  version "0.27.6"
+  resolved "https://registry.yarnpkg.com/react-slick/-/react-slick-0.27.6.tgz#ea8d7132948cfe92e50a05733836ca2b85ccf188"
+  integrity sha512-0JKKBNBQuMtYdUVAU/YyEoyuLLQlSaypkTxdv2gp1y9d5YvN2OcHS6M9oV7TTj51teabiHT7mhXOasxfX0TZBA==
   dependencies:
     classnames "^2.2.5"
     enquire.js "^2.1.6"
