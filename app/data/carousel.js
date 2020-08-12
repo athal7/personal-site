@@ -32,7 +32,7 @@ export const CAROUSEL_ITEMS = [
     description: 'completed the Oxford Blockchain Strategy Programme'},
   {category: 'education',
     linkTo: 'https://www.youracclaim.com/badges/a163d5ed-dd26-490f-af15-fa0b90cd5626',
-    backgroundImage: 'togaf.jpg',
+    backgroundImage: 'togaf.png',
     description: 'is TOGAF certified'},
   {category: 'oss',
     linkTo: 'https://www.railstutorial.org',
