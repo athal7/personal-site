@@ -12,7 +12,7 @@ jobs:
           npm i
           npm run prod
       - name: Percy Test
-        uses: percy/snapshot-action@v0.1.1
+        uses: percy/snapshot-action@v0.1.2
         with:
           build-directory: "public/"
         env:
