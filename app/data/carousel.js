@@ -37,20 +37,12 @@ export const CAROUSEL_ITEMS = [
   {category: 'oss',
     linkTo: 'https://www.railstutorial.org',
     backgroundImage: 'railstutorial.png',
-    description: 'performs technical book reviews'},
-  {category: 'play',
-    backgroundImage: 'washington_sports.jpg',
-    description: 'roots for D.C. sports teams'},
-  {category: 'play',
-    linkTo: 'https://modules.ussquash.com/ssm/pages/player_profile.asp?id=94893' ,
-    backgroundImage: 'squash.jpg',
-    description: 'plays squash'}
+    description: 'performs technical book reviews'}
 ]
 
 export const FILTERS = [
   {category: 'work', icon: 'briefcase'},
   {category: 'education', icon: 'graduation-cap'},
-  {category: 'play', icon: 'futbol-o'},
   {category: 'oss', icon: 'code'}
 ]
 
