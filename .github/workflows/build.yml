@@ -3,7 +3,7 @@ name: Build & Deploy
 on:
   push:
     branches:
-      - andrew
+      - main
 
 jobs:
   build:
@@ -23,4 +23,6 @@ jobs:
           AWS_SECRET_ACCESS_KEY: ${{secrets.AWS_SECRET_ACCESS_KEY}}
         run: |
           aws s3 sync app/assets/images s3://www.athal7.com/images
+          aws s3 sync app/assets/images s3://www.rebeccamiller.me/images
           aws s3 sync public s3://www.athal7.com
+          aws s3 sync public s3://www.rebeccamiller.me
