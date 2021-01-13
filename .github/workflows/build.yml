@@ -46,6 +46,6 @@ jobs:
           AWS_ACCESS_KEY_ID: ${{secrets.AWS_ACCESS_KEY_ID}}
           AWS_SECRET_ACCESS_KEY: ${{secrets.AWS_SECRET_ACCESS_KEY}}
         run: |
-          if [[ "$GITHUB_REF" != "main" ]]; then flags="--dryrun"; fi
+          if [[ "$GITHUB_REF" != "main" ]]; then flags="--dryrun"; else flags=""; fi
           aws s3 sync public s3://www.athal7.com $flags
           aws s3 sync public s3://www.rebeccamiller.me $flags
