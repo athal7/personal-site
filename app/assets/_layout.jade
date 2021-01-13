@@ -2,11 +2,12 @@ block variables
   - var name = ''
   - var key = ''
   - var description = ''
+  - var analyticsId = ''
 
 doctype html
 html(lang='en')
   head
-    script(async='' src='https://www.googletagmanager.com/gtag/js?id=UA-57664021-2')
+    script(async='' src='https://www.googletagmanager.com/gtag/js?id=#{analyticsId}')
     script.
       window.dataLayer = window.dataLayer || [];
       function gtag(){dataLayer.push(arguments);}
