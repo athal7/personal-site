@@ -20,7 +20,7 @@ export default class App extends Component {
     return (
       <div className={s.app}>
         <Header
-          name={this.props.data.name}
+          name={this.props.name}
           lead={this.state.lead} />
 
         <Filters

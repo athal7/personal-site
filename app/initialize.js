@@ -5,8 +5,8 @@ import data from './data/carousel'
 
 
 
-window.initialize = function(person) { 
+window.initialize = function(person, name) { 
   document.addEventListener('DOMContentLoaded', () => {
-    ReactDOM.render(<App data={data[person]} />, document.querySelector('#app'))
+    ReactDOM.render(<App data={data[person]} name={name} />, document.querySelector('#app'))
   })
 }

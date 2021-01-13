@@ -1,6 +1,5 @@
 export default {
   andrew: {
-    name: 'Andrew Thal',
     carouselItems: [
       {category: 'work', backgroundImage: 'headshot.png', description: 'technologist, sports lover, Michigander'},
       {category: 'work', linkTo: 'https://2u.com', backgroundImage: '2U.png', description: 'guides architecture direction'},
@@ -26,7 +25,6 @@ export default {
     ]
   },
   rebecca: {
-    name: 'Rebecca Miller',
     carouselItems: [
       {category: 'work', backgroundImage: 'headshot.jpg', description: 'Healthcare transformation leader & nationally certified Integrative Health Coach'},
       {category: 'work', linkTo: 'https://company.auntbertha.com/', backgroundImage: 'auntbertha.jpg', description: 'Senior Customer Success Manager'},
