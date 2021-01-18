@@ -21,9 +21,9 @@ window.initialize = function(person, name, analyticsId) {
   ReactGA.initialize(analyticsId, {debug})
   ReactGA.pageview(window.location.pathname + window.location.search)
   document.addEventListener('DOMContentLoaded', () => {
-    ReactDOM.render(<App data={data[person]} name={name} />, document.querySelector('#app'))  
     getCLS(sendToGoogleAnalytics)
     getFID(sendToGoogleAnalytics)
     getLCP(sendToGoogleAnalytics)
+    ReactDOM.render(<App data={data[person]} name={name} />, document.querySelector('#app'))  
   })
 }
