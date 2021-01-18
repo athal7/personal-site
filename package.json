@@ -31,6 +31,8 @@
     "jade-brunch": "^2.8.0",
     "javascript-brunch": "^2.10.0",
     "postcss-brunch": "^3.0.0",
-    "uglify-js-brunch": "^2.10.0"
+    "react-ga": "^3.3.0",
+    "uglify-js-brunch": "^2.10.0",
+    "web-vitals": "^1.1.0"
   }
 }
