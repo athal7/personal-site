@@ -16,6 +16,7 @@ export default class CarouselItem extends Component {
       return (
         <a
           target="_blank"
+          rel="noopener noreferrer"
           href={this.props.linkTo}
           className={this.className()}
           data-description={this.props.description}
