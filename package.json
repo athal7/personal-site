@@ -20,7 +20,7 @@
   "devDependencies": {
     "@babel/core": "^7.13.13",
     "@babel/preset-env": "^7.13.10",
-    "@babel/preset-react": "^7.12.13",
+    "@babel/preset-react": "^7.13.13",
     "auto-reload-brunch": "^2.0.0",
     "autoprefixer": "^9.8.6",
     "babel-brunch": "^7.0.1",
