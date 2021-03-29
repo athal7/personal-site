@@ -8,7 +8,10 @@ export default class Contact extends Component {
 
   render() {
     return (
-      <a target='_blank' href={this.props.linkTo}>
+      <a 
+        target='_blank' 
+        rel="noopener noreferrer"
+        href={this.props.linkTo}>
         <i className={this.className()}></i>
       </a>
     )
