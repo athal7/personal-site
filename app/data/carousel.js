@@ -19,7 +19,6 @@ export default {
     ],
     contacts: [
       {linkTo: 'https://resume.creddle.io/resume/7aztw0bpq31', icon: 'id-card-o'},
-      {linkTo: 'mailto:andrewthal88@gmail.com', icon: 'envelope'},
       {linkTo: 'http://linkedin.com/in/athal7', icon: 'linkedin-square'},
       {linkTo: 'http://github.com/athal7', icon: 'github'}
     ]
