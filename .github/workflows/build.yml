@@ -10,7 +10,7 @@ jobs:
       - name: Build
         run: |
           npm i
-          npm run prod
+          npm run build
       - name: Upload static build
         uses: actions/upload-artifact@v2
         with:
