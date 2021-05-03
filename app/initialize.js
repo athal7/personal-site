@@ -4,6 +4,8 @@ import ReactGA from 'react-ga'
 import {getCLS, getFID, getLCP} from 'web-vitals'
 import App from './templates/App'
 import data from './data/carousel'
+import './styles/01normalize.css';
+
 
 const debug = !!window.location.host.match('localhost')
 

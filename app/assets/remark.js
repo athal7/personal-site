@@ -1,3 +1,5 @@
+import './remark.css'
+
 remark.create({
   highlightLines: true,
   highlightStyle: 'github',
