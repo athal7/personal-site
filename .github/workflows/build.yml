@@ -33,6 +33,7 @@ jobs:
           PERCY_TOKEN: ${{ secrets.PERCY_TOKEN }}
   deploy:
     needs: [build, percy]
+    if: github.ref == 'refs/heads/main'
     runs-on: ubuntu-latest
     steps:
       - name: Download static build
@@ -46,6 +47,5 @@ jobs:
           AWS_SECRET_ACCESS_KEY: ${{secrets.AWS_SECRET_ACCESS_KEY}}
           AWS_DEFAULT_REGION: ${{secrets.AWS_DEFAULT_REGION}}
         run: |
-          if [[ "$GITHUB_REF" != "refs/heads/main" ]]; then flags="--dryrun"; else flags=""; fi
-          aws s3 sync public s3://www.athal7.com $flags
-          aws s3 sync public s3://www.rebeccamiller.me $flags
+          aws s3 sync public s3://www.athal7.com
+          aws s3 sync public s3://www.rebeccamiller.me
