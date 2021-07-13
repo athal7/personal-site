@@ -59,7 +59,12 @@ module.exports = {
       patterns: [{
         from: 'app/assets/images', 
         to: 'images',
-      }],
+      },
+      {
+        from: 'app/assets/remark.css',
+        to: 'remark.css',
+      }
+      ]
     }),
   ],
   devServer: {
